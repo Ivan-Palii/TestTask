@@ -98,53 +98,39 @@ onMounted(async () => {
             :slides-per-view="1"
             :loop="false"
             :creative-effect="{
-            prev: {
-              shadow: false,
-              translate: ['-20%', 0, -1],
-            },
-            next: {
-              translate: ['100%', 0, 0],
-            },
-          }"
+              prev: {
+                shadow: false,
+                translate: ['-20%', 0, -1],
+              },
+              next: {
+                translate: ['100%', 0, 0],
+              },
+            }"
             :pagination="{
-            clickable: true,
-          }"
+              clickable: true,
+            }"
             :navigation="{
-            enabled: true,
-            prevEl: '.swiper-btn-prev',
-            nextEl: '.swiper-btn-next',
-            disabledClass: 'swiper-btn-disabled'
-          }"
+              enabled: true,
+              prevEl: '.swiper-btn-prev',
+              nextEl: '.swiper-btn-next',
+              disabledClass: 'swiper-btn-disabled',
+            }"
           >
-            <SwiperSlide
-              v-for="slide in slides"
-              :key="slide['key']"
-            >
+            <SwiperSlide v-for="slide in slides" :key="slide['key']">
               <div class="slide">
                 <div class="slide__text-content">
                   <h2 class="slide__title section-title">{{ slide.title }}</h2>
                   <h3 class="slide__subtitle">{{ slide.subtitle }}</h3>
-                  <p
-                    class="slide__text"
-                    v-html="slide.description"
-                  ></p>
-                  <NuxtLink
-                    :to="slide.buttonLink"
-                    rel=""
-                    class="slide__btn btn"
-                  >{{ slide.buttonText }}
-                  </NuxtLink
-                  >
+                  <p class="slide__text" v-html="slide.description"></p>
+                  <NuxtLink :to="slide.buttonLink" rel="" class="slide__btn btn"
+                    >{{ slide.buttonText }}
+                  </NuxtLink>
                 </div>
                 <div class="slide__img-wrapper">
-                  <img
-                    :src="slide.image"
-                    alt=""
-                  />
+                  <img :src="slide.image" alt="" />
                 </div>
               </div>
             </SwiperSlide>
-
           </Swiper>
           <div class="swiper-btn-prev"></div>
           <div class="swiper-btn-next"></div>
@@ -295,7 +281,7 @@ onMounted(async () => {
   }
 
   // .slider-section__slider-container
-  &__slider-container{
+  &__slider-container {
     position: relative;
   }
 }
@@ -361,26 +347,26 @@ onMounted(async () => {
   width: 24px;
   height: 20px;
   &:before,
-  &:after{
-    content: '';
+  &:after {
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
 
-  &:before{
+  &:before {
     width: 24px;
     height: 3px;
     background-color: #000;
   }
 
-  &:after{
+  &:after {
     border: #000 solid;
   }
 }
 .swiper-btn-prev {
   left: 10px;
-  &:after{
+  &:after {
     height: 18px;
     width: 18px;
     transform: translateY(-50%) rotate(-135deg);
@@ -389,7 +375,7 @@ onMounted(async () => {
 }
 .swiper-btn-next {
   right: 10px;
-  &:after{
+  &:after {
     right: 0;
     height: 18px;
     width: 18px;
@@ -398,13 +384,13 @@ onMounted(async () => {
   }
 }
 
-.swiper-btn-disabled{
+.swiper-btn-disabled {
   cursor: auto;
-  &:before{
-    background-color: #CCCCCC;
+  &:before {
+    background-color: #cccccc;
   }
-  &:after{
-    border-color: #CCCCCC;
+  &:after {
+    border-color: #cccccc;
   }
 }
 </style>
