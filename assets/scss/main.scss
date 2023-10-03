@@ -23,3 +23,21 @@
     outline-offset: 1px;
   }
 }
+
+.swiper-wrapper{
+  align-items: center;
+}
+
+.swiper-pagination{
+  position: relative !important;
+  margin-top: 50px ;
+}
+
+.swiper-pagination-bullet{
+  background-color:  #FF0000 !important;
+  opacity: 0.2 !important;
+  &-active{
+    opacity: 1   !important;
+  }
+}
+
